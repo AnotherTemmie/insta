@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script>
+        function addTemplate(URL) {
+            var Obj = document.createElement('div');
+            Obj.className = 'photo_block';
+            var Img = document.createElement('img');
+            var Att = document.createAttribute("src");
+            Att.value="Images/"+URL;
+            Img.setAttributeNode(Att);
+            Obj.appendChild(Img);
+            document.getElementById('grid').appendChild(Obj);
+        }
+
+        function addImage(){
+            for(i=0;i<10;i++)addTemplate(array[i]);
+        }
+
+        var array = ["another_box.jpg","better_box.jpg","black_box.jpg","blue_box.jpg","box.png","closed_box.jpg","opened_black_box.jpg","pink_box.jpg","slim_box.jpg","sydney_box.jpg"]
+
+        $$r(function(){
+            addImage();
+        })
+
+    </script>
+</head>
+<div class="header">
+    <div class="logo">
+        <a href="" title="Главная страница">
+            <img src="Images/insta_logo.png">
+        </a>
+    </div>
+    <div class="left_menu">
+Profile Menu
+        <div class="menu_arrow">
+            ↓
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="user_info">
+        User Info
+        <div class="user_photo">
+        <div class="user_name">
+            Somebody Here'Ovich
+            <p>@somebodyhere127</p>
+            <br>
+            Has no idea what he's doing here.
+            <p><a>www.somesite.io</a></p>
+            </div>
+        </div>
+        <div class="user_stats">
+            <div class="stat">
+
+            </div>
+            <div class="stat">
+
+            </div>
+            <div class="stat">
+
+            </div>
+        </div>
+    </div>
+    <div class="photo_work">
+        <div class="photo_search">
+            <input type="button" value="Upload Photo">
+            <input type="text">
+            <a>All</a>|<a>Photos</a>|<a>Videos</a>
+        </div>
+        <div class="photo_grid" id="grid">
+
+        </div>
+    </div>
+</div>
+    <input type="button" class="add_photos" value="Добавить фоток" onclick="addImage()">
+<div class="footer">
+</div>
+</body>
+</html>
